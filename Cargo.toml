@@ -1,0 +1,12 @@
+[package]
+name = "archivio"
+version = "0.1.0"
+authors = ["Riccardo Casatta <riccardo@casatta.it>"]
+edition = "2018"
+description = "Based on the content of the Files directory creates a Tags directory with symbolic links to original content. Files should follow the naming convention AAAA-MM-DD[_Tags]+"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+regex = "1"

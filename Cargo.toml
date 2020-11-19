@@ -1,6 +1,6 @@
 [package]
 name = "archivio"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Riccardo Casatta <riccardo@casatta.it>"]
 edition = "2018"
 description = "Based on the content of the Files directory creates a Tags directory with symbolic links to original content. Files should follow the naming convention AAAA-MM-DD[_Tags]+"

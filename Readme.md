@@ -6,6 +6,12 @@ When launched in a directory, it search contents of the Files sub-directory and 
  
 Files should follow the naming convention AAAA-MM-DD[_Tags]+
 
+## Install
+
+```
+cargo install archivio
+```
+
 ## Example
 
 ```
@@ -14,7 +20,7 @@ Files
 └── 2020-11-12_Invoice_XCorp.pdf
 ```
 
-will create
+launching `archivio` will create
 
 ```
 Tags/
@@ -39,4 +45,9 @@ Tags/
     └── 2019-10-13_Invoice_YCorp.pdf -> Files/2019-10-13_Invoice_YCorp.pdf
 ```
 
+## Updates
 
+When adding files you can safely run `archivio` again to update `Tags` dir.
+In case of name changes or deletion old tags will not be updated, 
+but you can simply delete the `Tags` directory and recreate it by relaunching `archivio`.
+ 

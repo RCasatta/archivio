@@ -1,5 +1,7 @@
 ## Archivio
 
+[![crates.io](https://img.shields.io/crates/v/archivio.svg)](https://crates.io/crates/archivio)
+
 When launched in a directory, it search contents of the Files sub-directory and creates a Tags directory with symbolic links to original content.
  
 Files should follow the naming convention AAAA-MM-DD[_Tags]+

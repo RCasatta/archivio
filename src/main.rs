@@ -93,7 +93,6 @@ impl Elements {
     /// Creates a directory tree of tags and symbolic reference to files under "Tags" directory
     fn creates_dirs_and_refs(&self, path: &[&str]) -> Result<()> {
         let new_elements = self.filter(&path);
-        println!("new_elements: {:?}", new_elements);
         let first_level = path.is_empty();
         for element in new_elements.0.iter() {
             // not showing files in the first level (would be all)

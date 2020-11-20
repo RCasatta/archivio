@@ -1,5 +1,5 @@
 use regex::Regex;
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 use std::convert::TryFrom;
 use std::fs::DirEntry;
 use std::iter::FromIterator;
@@ -85,6 +85,24 @@ impl Elements {
         files_dir
     }
 
+    fn tags_occurences(&self) -> HashMap<String, u32> {
+        let mut counters = HashMap::new();
+        for el in self.0.iter() {
+            for tag in el.tags.iter() {
+                *counters.entry(tag.to_string()).or_insert(0u32) += 1;
+            }
+        }
+        counters
+    }
+
+    fn print_tags_occurences_sorted(&self) {
+        let mut vec: Vec<(String, u32)> = self.tags_occurences().into_iter().collect();
+        vec.sort_by(|a, b| a.1.cmp(&b.1));
+        for el in vec {
+            println!("{:4} {}", el.1, el.0);
+        }
+    }
+
     /// returns all file names in self
     fn names(&self) -> HashSet<String> {
         self.0.iter().map(|e| String::from(&e.name)).collect()
@@ -162,5 +180,7 @@ impl TryFrom<DirEntry> for Element {
 
 fn main() -> Result<()> {
     let elements = Elements::new()?;
-    elements.creates_dirs_and_refs(&[])
+    elements.creates_dirs_and_refs(&[])?;
+    elements.print_tags_occurences_sorted();
+    Ok(())
 }

@@ -20,7 +20,7 @@ Files
 └── 2020-11-12_Invoice_XCorp.pdf
 ```
 
-launching `archivio` will create
+launching `archivio` will create a directory cambrian explosion
 
 ```
 Tags/

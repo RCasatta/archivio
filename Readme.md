@@ -45,6 +45,14 @@ Tags/
     └── 2019-10-13_Invoice_YCorp.pdf -> Files/2019-10-13_Invoice_YCorp.pdf
 ```
 
+## Rules
+
+Maximum depth of created directories is 3.
+ 
+If a child directory will not filter more than current, it will not be created.
+
+`Tags/` root directory will not contain symbolic link (would be all).
+
 ## Updates
 
 When adding files you can safely run `archivio` again to update `Tags` dir.
